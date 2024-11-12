@@ -1,13 +1,13 @@
-# ❗CSC226 Final Project
+# CSC226 Final Project
 
 ## Instructions
 
-❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
+Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
   they accompany. (This means that your final README should have no ❗️in it!)
 
-❗️**Author(s)**: Your name(s) here
+**Author(s)**: Cody Bandy
 
-❗️**Google Doc Link**: Your link here
+**Google Doc Link**: https://docs.google.com/document/d/1hUkpndO_Y33dohdYFrD94r5aF0yBLR0EfFUOT2MJWuI/edit?usp=sharing
 
 ---
 
@@ -20,11 +20,11 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 
 ## Milestone 1: Setup, Planning, Design
 
-❗️**Title**: `What is the title of your project? Be creative! Replace this block of text.`
+**Title**: `Harry Potter Sorting Hat Quiz`
 
-❗**Purpose**: `In a single sentence, describe WHAT your project will do. Replace this block of text.`
+**Purpose**: `Ask the user multiple choice questions to determine a result, then use turtle drawing to display which house they belong to.`
 
-❗️**Source Assignment(s)**: `List which original assignments you will base your project on? Replace this block of text.`
+**Source Assignment(s)**: `T01 (conditionals), T02/03 (turtles), T10 (classes), T12 (GUI)`
 
 ❗️**CRC Card(s)**:
   - Create a CRC card for each class that your project will implement.

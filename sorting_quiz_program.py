@@ -59,3 +59,41 @@ class SortingHatGUI:
 
     def display_turtle_result(self, house_name):
         pass
+
+
+def main():
+    houses = {
+        "Gryffindor": House("Gryffindor"),
+        "Slytherin": House("Slytherin"),
+        "Ravenclaw": House("Ravenclaw"),
+        "Hufflepuff": House("Hufflepuff"),
+    }
+
+    questions = [
+        Question(
+            "What would you rather do?",
+            {"Lead a team": "Gryffindor", "Plan a strategy": "Ravenclaw",
+             "Work behind the scenes": "Hufflepuff", "Achieve greatness": "Slytherin"}
+        ),
+        Question(
+            "How would your friends describe you?",
+            {"Brave": "Gryffindor", "Clever": "Ravenclaw",
+             "Loyal": "Hufflepuff", "Ambitious": "Slytherin"}
+        ),
+        Question(
+            "What is your favorite subject?",
+            {"Defense Against the Dark Arts": "Gryffindor", "Potions": "Slytherin",
+             "Charms": "Ravenclaw", "Herbology": "Hufflepuff"}
+        ),
+        Question(
+            "What would you do in a duel?",
+            {"Stand your ground": "Gryffindor", "Outsmart your opponent": "Ravenclaw",
+             "Help others to safety": "Hufflepuff", "Strike first": "Slytherin"}
+        ),
+    ]
+
+    quiz = Quiz(questions, houses)
+
+    SortingHatGUI(quiz)
+
+main()

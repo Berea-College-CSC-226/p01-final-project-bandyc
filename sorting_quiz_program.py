@@ -10,7 +10,7 @@ class Question:
         self.options = options
 
     def get_house_for_answer(self, answer):
-        pass
+        return self.options.get(answer, None)
 
 
 class House:
@@ -19,7 +19,7 @@ class House:
         self.score = 0
 
     def add_score(self, points=1):
-        pass
+        self.score += points
 
 
 class Quiz:
@@ -29,10 +29,15 @@ class Quiz:
         self.current_question_index = 0
 
     def get_current_question(self):
-        pass
+        if self.current_question_index < len(self.questions):
+            return self.questions[self.current_question_index]
+        return None
 
     def calculate_result(self):
-        pass
+        def get_house_score(house):
+            return house.score
+
+        return max(self.houses.values(), key=get_house_score).name
 
 
 class SortingHatGUI:

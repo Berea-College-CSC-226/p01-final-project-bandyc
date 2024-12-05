@@ -2,7 +2,7 @@
 
 
 import tkinter as tk
-import turtle
+from turtle import Turtle, Screen
 
 class Question:
     def __init__(self, text, options):
@@ -51,19 +51,67 @@ class SortingHatGUI:
         self.display_question()
 
     def create_widgets(self):
-        pass
+        self.question_label = tk.Label(self.window, text="")
+        self.question_label.pack()
+
+        self.options_frame = tk.Frame(self.window)
+        self.options_frame.pack()
+
+        self.next_button = tk.Button(self.window, text="Next", command=self.next_question)
+        self.next_button.pack()
 
     def display_question(self):
-        pass
+        self.clear_options()
+        self.current_question = self.quiz.get_current_question()
+        if not self.current_question:
+            self.show_result()
+            return
+
+        self.question_label.config(text=self.current_question.text)
+        for option_text in self.current_question.options.keys():
+            radio_button = tk.Radiobutton(
+                self.options_frame,
+                text=option_text,
+                variable=self.selected_answer,
+                value=option_text,
+            )
+            radio_button.pack()
+
+    def clear_options(self):
+        for widget in self.options_frame.winfo_children():
+            widget.destroy()
+        self.selected_answer.set(None)
 
     def next_question(self):
-        pass
+        selected_option = self.selected_answer.get()
+        if selected_option:
+            house_name = self.current_question.get_house_for_answer(selected_option)
+            if house_name:
+                self.quiz.houses[house_name].add_score()
+
+            self.quiz.current_question_index += 1
+            self.display_question()
 
     def show_result(self):
-        pass
+        self.clear_options()
+        self.question_label.pack_forget()
+        self.next_button.pack_forget()
+
+        result_house = self.quiz.calculate_result()
+        self.result_label = tk.Label(self.window, text=f"You belong to {result_house}!")
+        self.result_label.pack()
+
+        self.display_turtle_result(result_house)
 
     def display_turtle_result(self, house_name):
-        pass
+        screen = Screen()
+        screen.title("Sorting Hat Result")
+        turtle = Turtle()
+        turtle.hideturtle()
+        turtle.speed(1)
+        turtle.color("black")
+        turtle.write(f"Welcome to {house_name}!")
+        screen.mainloop()
 
 
 def main():
@@ -100,5 +148,7 @@ def main():
     quiz = Quiz(questions, houses)
 
     SortingHatGUI(quiz)
+
+    tk.mainloop()
 
 main()

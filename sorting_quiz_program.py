@@ -208,24 +208,54 @@ def main():
 
     questions = [
         Question(
-            "What would you rather do?",
-            {"Lead a team": "Gryffindor", "Plan a strategy": "Ravenclaw",
-             "Work behind the scenes": "Hufflepuff", "Achieve greatness": "Slytherin"}
+            "What quality do you value most in yourself?",
+            {"Courage": "Gryffindor", "Intelligence": "Ravenclaw",
+             "Kindness": "Hufflepuff", "Ambition": "Slytherin"}
         ),
         Question(
-            "How would your friends describe you?",
-            {"Brave": "Gryffindor", "Clever": "Ravenclaw",
-             "Loyal": "Hufflepuff", "Ambitious": "Slytherin"}
+            "What would you do if you found a lost magical artifact?",
+            {"Turn it in to the authorities": "Ravenclaw", "Use it for a noble cause": "Gryffindor",
+             "Keep it safe for others": "Hufflepuff", "Study its potential power": "Slytherin"}
         ),
         Question(
-            "What is your favorite subject?",
-            {"Defense Against the Dark Arts": "Gryffindor", "Potions": "Slytherin",
-             "Charms": "Ravenclaw", "Herbology": "Hufflepuff"}
+            "Which of these activities appeals to you most?",
+            {"Exploring unknown places": "Gryffindor", "Solving a tricky puzzle": "Ravenclaw",
+             "Gardening or nurturing others": "Hufflepuff", "Planning a bold strategy": "Slytherin"}
         ),
         Question(
-            "What would you do in a duel?",
-            {"Stand your ground": "Gryffindor", "Outsmart your opponent": "Ravenclaw",
-             "Help others to safety": "Hufflepuff", "Strike first": "Slytherin"}
+            "How do you handle conflict?",
+            {"Face it head-on": "Gryffindor", "Think your way around it": "Ravenclaw",
+             "Seek a peaceful resolution": "Hufflepuff", "Find a way to gain the upper hand": "Slytherin"}
+        ),
+        Question(
+            "What kind of pet would you want as a magical companion?",
+            {"Phoenix": "Gryffindor", "Owl": "Ravenclaw",
+             "Niffler": "Hufflepuff", "Snake": "Slytherin"}
+        ),
+        Question(
+            "What kind of friend are you?",
+            {"The protector": "Gryffindor", "The strategist": "Slytherin",
+             "The supporter": "Hufflepuff", "The thinker": "Ravenclaw"}
+        ),
+        Question(
+            "If you could master one magical skill, what would it be?",
+            {"Dueling": "Gryffindor", "Transfiguration": "Ravenclaw",
+             "Healing spells": "Hufflepuff", "Dark arts": "Slytherin"}
+        ),
+        Question(
+            "What do you seek most in life?",
+            {"Adventure": "Gryffindor", "Wisdom": "Ravenclaw",
+             "Harmony": "Hufflepuff", "Power": "Slytherin"}
+        ),
+        Question(
+            "What is your greatest fear?",
+            {"Failure": "Slytherin", "Betrayal": "Hufflepuff",
+             "Ignorance": "Ravenclaw", "Being seen as cowardly": "Gryffindor"}
+        ),
+        Question(
+            "If you were at Hogwarts, which class would you look forward to the most?",
+            {"Defense Against the Dark Arts": "Gryffindor", "Ancient Runes": "Ravenclaw",
+             "Care of Magical Creatures": "Hufflepuff", "Potions": "Slytherin"}
         ),
     ]
 

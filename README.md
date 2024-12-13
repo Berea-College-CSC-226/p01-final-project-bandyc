@@ -73,20 +73,41 @@ Indicate what percentage of the project you have left to complete and how confid
 
 ## Milestone 4: Final Code, Presentation, Demo
 
-### ❗User Instructions
-In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
-in PyCharm. 
+### User Instructions
+Read the question presented and pick from the four answers displayed that which most aligns with you. Click the bubble
+next to your chosen answer and then click the green next button. Continue to do this until you have answered 10 questions.
+Then, a new window will appear and a turtle drawing will show you your result.
 
-### ❗Errors and Constraints
-Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
-You should already have a few items in here from the prior weeks. Create a new issue for any undocumented errors and 
-deficiencies that remain in your code. Bugs found that aren't acknowledged in the queue will be penalized.
+### Reflection
+I selected this project because I thought it would be a fun project that isn't terribly complicated but still required a
+rounded knowledge of many of the aspects of the course. I also wanted it to be themed after something that holds a
+special place in my childhood and which I have a great nostalgia for, which is Harry Potter. Putting those two ideas
+together, I settled on something that addresses one of the most iconic aspects of the franchise, the sorting quiz. Most
+people who know of Harry Potter know what the sorting quiz is, and have most likely taken one themselves online in the past.
+I wanted to take my own shot at that, and so this project idea was born.
 
-### ❗Reflection
-In three to four well-written paragraphs, address the following (at a minimum):
-- Why did you select the project that you did?
-- How closely did your final project reflect your initial design?
-- What did you learn from this process?
-- What was the hardest part of the final project?
-- What would you do differently next time, knowing what you know now?
-- (For partners) How well did you work with your partner? What made it go well? What made it challenging?
+The general design ideas are more or less intact from the beginning of the project to the end. After all, it is a
+multiple choice quiz, there aren't many ways to reinvent the wheel when it comes to something like this. The parts that
+did change were the more specific details, mostly relating to the GUI side of things. The initial design of the GUI was
+barebones, just enough to get the info on the screen and spit out a result in a turtle screen. However, after some
+revamping and tinkering with formatting throughout the quiz and the final results window, it now looks quite a bit better
+with larger fonts, more colors, and a more uniform format throughout. The final results window had the biggest changes,
+but I was not able to use copyrighted images which limited my original vision for this area.
+
+I learned a lot from this project. I learned that getting things to look the same way on the screen that you imagine
+them as in your head is difficult. For example, getting all the words in the turtle window to fit within the confines of
+the borders without altering the sizes took some trial and error. I learned that planning things out in steps with a
+general roadmap helps maintain focus and makes design easier. I learned that making proper use of classes is immensely
+helpful in terms of organization and reuse of code. As for the hardest part of this project, it was probably the test
+suite. My project relies on user input, and I could not figure out how to simulate that in unit tests or make a test suite
+built around it. I eventually deferred to AI resources for this portion of the project (which was credited) but I am also
+now realizing that the test suite should probably have been updated to account for the revamp in format/questions,
+but I will leave that as a "wanted to do but didn't have time" and note it in the appropriate issue queue entry.
+
+If I were to do something differently next time, knowing what I do now, I would try to spread out the process of this
+project more evenly. As it stands, I did most of the work in several long sittings rather than making incremental steady
+progress over time. I would also probably choose a topic that is a bit more exciting to work on. While I enjoyed the idea
+of a Harry Potter sorting quiz, and I liked the process of creating the questions and the quiz logic, I did not enjoy
+the GUI related processes and formatting work as much. But all in all, I still had fun working on this project and I am
+satisfied with how it turned out. It may not be the most complex program, but it functions and it looks decent enough 
+doing it, and that's all I can really ask for right now.

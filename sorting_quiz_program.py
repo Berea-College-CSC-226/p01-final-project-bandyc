@@ -44,20 +44,41 @@ class SortingHatGUI:
         self.quiz = quiz
         self.window = tk.Tk()
         self.window.title("Sorting Hat Quiz")
+        self.window.geometry("600x400")  # Fixed window size
+        self.window.resizable(False, False)
+        self.window.configure(bg="#f5f5dc")  # Light beige background
+
         self.current_question = None
         self.selected_answer = tk.StringVar()
+
         self.create_widgets()
         self.display_question()
 
     def create_widgets(self):
-        self.question_label = tk.Label(self.window, text="")
-        self.question_label.pack()
-
-        self.options_frame = tk.Frame(self.window)
-        self.options_frame.pack()
-
-        self.next_button = tk.Button(self.window, text="Next", command=self.next_question)
-        self.next_button.pack()
+        self.question_label = tk.Label(
+            self.window,
+            text="",
+            font=("Arial", 16, "bold"),
+            bg="#f5f5dc",
+            fg="#333333",  # Dark gray text
+            wraplength=550,
+            justify="center"
+        )
+        self.question_label.pack(pady=20)
+        self.options_frame = tk.Frame(self.window, bg="#f5f5dc")
+        self.options_frame.pack(pady=10)
+        self.next_button = tk.Button(
+            self.window,
+            text="Next",
+            command=self.next_question,
+            font=("Arial", 14),
+            bg="#4CAF50",  # Green button
+            fg="white",
+            activebackground="#45a049",  # Darker green on click
+            activeforeground="white",
+            relief=tk.RAISED
+        )
+        self.next_button.pack(pady=20)
 
     def display_question(self):
         self.clear_options()
@@ -67,14 +88,23 @@ class SortingHatGUI:
             return
 
         self.question_label.config(text=self.current_question.text)
+
         for option_text in self.current_question.options.keys():
             radio_button = tk.Radiobutton(
                 self.options_frame,
                 text=option_text,
                 variable=self.selected_answer,
                 value=option_text,
+                font=("Arial", 12),
+                bg="#f5f5dc",
+                fg="#333333",
+                activebackground="#f5f5dc",
+                activeforeground="#000000",
+                anchor="w",
+                padx=10,
+                indicatoron=True
             )
-            radio_button.pack()
+            radio_button.pack(anchor="w", pady=5)
 
     def clear_options(self):
         for widget in self.options_frame.winfo_children():
@@ -97,19 +127,74 @@ class SortingHatGUI:
         self.next_button.pack_forget()
 
         result_house = self.quiz.calculate_result()
-        self.result_label = tk.Label(self.window, text=f"You belong to {result_house}!")
-        self.result_label.pack()
+        self.result_label = tk.Label(
+            self.window,
+            text=f"You belong to {result_house}!",
+            font=("Arial", 20, "bold"),
+            bg="#f5f5dc",
+            fg="#333333"
+        )
+        self.result_label.pack(pady=20)
 
         self.display_turtle_result(result_house)
 
     def display_turtle_result(self, house_name):
         screen = Screen()
+        screen.setup(width=600, height=400)
         screen.title("Sorting Hat Result")
+        screen.bgcolor("lightgray")
+
         turtle = Turtle()
         turtle.hideturtle()
-        turtle.speed(1)
-        turtle.color("black")
-        turtle.write(f"Welcome to {house_name}!")
+        turtle.speed(3)
+
+        colors = {
+            "Gryffindor": "red",
+            "Slytherin": "green",
+            "Ravenclaw": "blue",
+            "Hufflepuff": "yellow"
+        }
+
+        turtle.penup()
+        turtle.goto(-290, 180)
+        turtle.pendown()
+        turtle.pensize(5)
+        turtle.color(colors.get(house_name, "black"))
+        for _ in range(2):
+            turtle.forward(580)
+            turtle.right(90)
+            turtle.forward(360)
+            turtle.right(90)
+
+        turtle.penup()
+        turtle.goto(0, 100)
+        turtle.color(colors.get(house_name, "black"))
+        turtle.write(f"Welcome to {house_name}!", align="center", font=("Arial", 24, "bold"))
+
+        house_messages = {
+            "Gryffindor": "Bravery, courage, and chivalry define you!",
+            "Slytherin": "Ambition, cunning, and resourcefulness are your strengths!",
+            "Ravenclaw": "Wit, wisdom, and learning are your greatest qualities!",
+            "Hufflepuff": "Hard work, patience, and loyalty make you shine!"
+        }
+        message = house_messages.get(house_name, "You are unique and special!")
+
+        max_width = 40
+        y_position = 40
+        current_line = ""
+        for word in message.split():
+            if len(current_line) + len(word) + 1 > max_width:
+                turtle.goto(0, y_position)
+                turtle.write(current_line, align="center", font=("Arial", 18, "italic"))
+                y_position -= 30
+                current_line = word
+            else:
+                current_line += (" " if current_line else "") + word
+
+        if current_line:
+            turtle.goto(0, y_position)
+            turtle.write(current_line, align="center", font=("Arial", 18, "italic"))
+
         screen.mainloop()
 
 
